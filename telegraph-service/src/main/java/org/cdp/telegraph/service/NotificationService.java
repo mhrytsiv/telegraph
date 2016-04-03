@@ -2,16 +2,17 @@ package org.cdp.telegraph.service;
 
 import org.cdp.telegraph.persistence.dao.NotificationDAO;
 import org.cdp.telegraph.persistence.model.Notification;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
+import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  * Created by Mykhaylo_Hrytsiv on 4/1/2016.
  */
-@Service
+@Named
 public class NotificationService {
 
-    @Autowired
+    @Inject
     private NotificationDAO notificationDAO;
 
     public final Notification getNotification() {

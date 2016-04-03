@@ -14,7 +14,4 @@
     <suppress checks="LineLength" files=".java"/>
     <!--Suppress Method 'onStartup' is not designed for extension - needs to be abstract, final or empty. -->
     <suppress checks="DesignForExtension" files=".java"/>
-
-
-
 </suppressions>

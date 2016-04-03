@@ -23,6 +23,10 @@
             <artifactId>spring-webmvc</artifactId>
         </dependency>
         <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+        </dependency>
+        <dependency>
             <groupId>cdp</groupId>
             <artifactId>telegraph-persistence</artifactId>
             <version>1.0.0</version>
