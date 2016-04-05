@@ -2,6 +2,8 @@ package org.cdp.telegraph.presentation.controller;
 
 import org.cdp.telegraph.facade.converter.NotificationConverter;
 import org.cdp.telegraph.facade.model.NotificationDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/notifications")
 public class NotificationController {
+    private static final Logger LOG = LoggerFactory.getLogger(NotificationController.class);
 
     @Autowired
     private NotificationConverter notificationConverter;
@@ -23,6 +26,7 @@ public class NotificationController {
 
     @RequestMapping("/load-notification")
     public ResponseEntity<NotificationDTO> loadNotification() {
+        LOG.info("Inside load-notification method");
         return ResponseEntity.ok().body(notificationConverter.convert());
     }
 

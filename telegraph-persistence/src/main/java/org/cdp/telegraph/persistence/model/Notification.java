@@ -23,4 +23,12 @@ public class Notification {
     public final void setBody(final String argBody) {
         this.body = argBody;
     }
+
+    @Override
+    public String toString() {
+        return "Notification{"
+                + "subject='" + subject + '\''
+                + ", body='" + body + '\''
+                + '}';
+    }
 }

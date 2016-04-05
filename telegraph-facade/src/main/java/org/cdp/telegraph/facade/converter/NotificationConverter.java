@@ -5,6 +5,8 @@ import org.cdp.telegraph.facade.annotation.Facade;
 import org.cdp.telegraph.facade.model.NotificationDTO;
 import org.cdp.telegraph.persistence.model.Notification;
 import org.cdp.telegraph.service.NotificationService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -12,11 +14,13 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 @Facade
 public class NotificationConverter {
+    private static final Logger LOG = LoggerFactory.getLogger(NotificationConverter.class);
 
     @Autowired
     private NotificationService notificationService;
 
     public final NotificationDTO convert() {
+        LOG.info("Convert Notification object to NotificationDTO object");
         final NotificationDTO notificationDTO = new NotificationDTO();
         final Notification notification = notificationService.getNotification();
         notificationDTO.setNotificationSubjAndBody(StringUtils.join(notification.getSubject(),
