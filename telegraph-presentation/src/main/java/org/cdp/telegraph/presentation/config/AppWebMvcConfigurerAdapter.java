@@ -1,7 +1,9 @@
 package org.cdp.telegraph.presentation.config;
 
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -17,7 +19,9 @@ import java.util.List;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan("org.cdp.telegraph.presentation")
+@ComponentScan(value = "org.cdp.telegraph.presentation",
+        excludeFilters = {@Filter(type = FilterType.REGEX,
+                pattern = {"org.cdp.telegraph.presentation.config.AppRootConfiguration"})})
 public class AppWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 
     @Override
