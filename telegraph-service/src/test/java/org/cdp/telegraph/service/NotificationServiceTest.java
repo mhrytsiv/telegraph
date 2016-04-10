@@ -3,35 +3,29 @@ package org.cdp.telegraph.service;
 import org.cdp.telegraph.persistence.dao.NotificationDAO;
 import org.cdp.telegraph.persistence.model.Notification;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.util.ReflectionTestUtils;
+import org.mockito.runners.MockitoJUnitRunner;
 
 /**
  * Created by Mykhaylo_Hrytsiv on 4/5/2016.
  */
-@ContextConfiguration(locations = "classpath:service-context-test.xml")
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 public class NotificationServiceTest {
 
-    @Autowired
-    private NotificationService notificationService;
-
+    @Mock
     private NotificationDAO notificationDAOMock;
 
-    @Before
-    public void before() {
-        notificationDAOMock = Mockito.mock(NotificationDAO.class);
-        ReflectionTestUtils.setField(notificationService, "notificationDAO", notificationDAOMock);
-    }
+    @InjectMocks
+    private NotificationService notificationService = new NotificationService();
+
 
     @Test
-    public void testGetNotification() {
+    public void testCheckCorrectGetterValuesWhenNotificationReturned() {
+        // Given
         final String subject = "subjectTest";
         final String body = "bodyTest";
         final Notification notification = new Notification();
@@ -40,7 +34,10 @@ public class NotificationServiceTest {
 
         Mockito.when(notificationDAOMock.getNotification()).thenReturn(notification);
 
+        // When
         final Notification notificationActual = notificationService.getNotification();
+
+        // Then
         Assert.assertEquals(subject, notificationActual.getSubject());
         Assert.assertEquals(body, notificationActual.getBody());
     }
