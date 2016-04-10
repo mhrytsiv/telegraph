@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
+            <artifactId>spring-context</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -33,7 +33,6 @@
         <dependency>
             <groupId>cdp</groupId>
             <artifactId>telegraph-service</artifactId>
-            <version>1.0.0</version>
         </dependency>
         <!-- add test dependencies -->
         <dependency>
@@ -44,10 +43,7 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-        </dependency>
+        
         <!-- add log dependencies -->
         <dependency>
             <groupId>commons-logging</groupId>

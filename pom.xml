@@ -30,6 +30,11 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>4.2.5.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
                 <artifactId>spring-tx</artifactId>
                 <version>4.2.5.RELEASE</version>
             </dependency>
@@ -59,9 +64,29 @@
                 <version>2.7.3</version>
             </dependency>
             <dependency>
+                <groupId>com.jayway.jsonpath</groupId>
+                <artifactId>json-path</artifactId>
+                <version>2.2.0</version>
+            </dependency>
+            <dependency>
                 <groupId>javax.inject</groupId>
                 <artifactId>javax.inject</artifactId>
                 <version>1</version>
+            </dependency>
+            <dependency>
+                <groupId>cdp</groupId>
+                <artifactId>telegraph-persistence</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>cdp</groupId>
+                <artifactId>telegraph-service</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>cdp</groupId>
+                <artifactId>telegraph-facade</artifactId>
+                <version>1.0.0</version>
             </dependency>
 
             <!-- add test dependencies -->
@@ -79,11 +104,6 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>4.2.5.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>com.jayway.jsonpath</groupId>
-                <artifactId>json-path</artifactId>
-                <version>2.2.0</version>
             </dependency>
 
             <!-- add log dependencies -->
